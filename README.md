@@ -4,6 +4,7 @@ MATCH CAREER ADVICE QUESTIONS WITH PROFESSIONALS IN THE FIELD
 Dataset: https://www.kaggle.com/c/data-science-for-good-careervillage/data
 
 1.    Find a problem worth solving, analyzing, or visualizing
+<br>
 o    Create a model to match career advice question with top 3 professionals
 
 2.    Machine Learning
