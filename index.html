@@ -3,11 +3,11 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Lessen your stress about your future: Ask a professional</title>
+  <title>Ask a professional</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="css/style.css">
   <script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
 
@@ -22,7 +22,8 @@
       </div>
     </nav>
     <div class="hero text-center">
-      <h1>Match Your Question With an Industry Professional</h1>
+      <b><h1 id= "title">Lessen Your Stress About Your Future: Ask a Professional</h1></b>
+      <h2>Match Your Question With an Industry Professional</h2>
       <p>Make the College Hunt and Career Choice a Little Easier</p>
     </div>
     <div class="container">
@@ -37,7 +38,7 @@
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
-                        <label for="date">Enter Your Question</label>
+                        <label for="question">Enter Your Question</label>
                         <input class="form-control" id="question" type="text" placeholder="Enter your question here">
                       </li>
                     </ul>
@@ -54,7 +55,10 @@
               <thead>
                 <tr>
                   <th class="table-head">XXXXXXXXX</th>
-                 
+                  <!-- {% for table in tables %}
+                  <h2>{{titles[loop.index]}}</h2>
+                  {{ table|safe }}
+                {% endfor %} -->
                 </tr>
               </thead>
               <tbody></tbody>
