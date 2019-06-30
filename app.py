@@ -1,8 +1,10 @@
 
 from flask import Flask, flash, jsonify, render_template, request
 import webbrowser
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
+CORS(app, support_credentials=True)
 @app.route('/')
 def hello():
     # return "this webpage is working"
@@ -12,10 +14,14 @@ def hello():
 def my_form_post():
     body = request.form['body']
     title= request.form['title']
-    
-    # return render_template ('result.html')
-    # return f'Title:{title} and Body: {body}'
-    
+
+    return f'Title:{title} and Body: {body}'
+
+@app.route("/getvalue/<title>/<body>")
+def data(title, body):
+    """Display all data from the collection."""
+    # return f'T :{title} and B : {body}'
+    return f'T --- {title} and B --- {body}'
 
 # @app.route('/handle_data' ,methods = ['POST', 'GET'])    
 # def handle_data():
