@@ -1,4 +1,3 @@
-
 from flask import Flask, flash, jsonify, render_template, request
 import webbrowser
 from flask_cors import CORS, cross_origin
@@ -32,8 +31,8 @@ graph = tf.get_default_graph()
 
 @app.route('/')
 def hello():
-    # return "this webpage is working"
-    return render_template('index.html')
+    return "this webpage is working"
+    # return render_template('index.html')
 
 @app.route('/handle_data', methods=['POST'])
 def my_form_post():
