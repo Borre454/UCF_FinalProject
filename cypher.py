@@ -25,7 +25,7 @@ def encode (title, body, date_string):
 
     # Tokenize the title
     for word in results:
-    word = word.lower()
+        word = word.lower()
     if word not in stop_words:
         try:
             coded.append(index_df.loc[word].values[0])
