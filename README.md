@@ -1,25 +1,30 @@
 # UCF_FinalProject
-
-MATCH CAREER ADVICE QUESTIONS WITH PROFESSIONALS IN THE FIELD
+MATCH CAREER ADVICE QUESTIONS WITH PROFESSIONALS IN THE FIELD 
 Dataset: https://www.kaggle.com/c/data-science-for-good-careervillage/data
 
-1. Find a problem worth solving, analyzing, or visualizing
+1.	Find a problem worth solving, analyzing, or visualizing
 
-o    Create a model to match career advice question with top 3 professionals
+o Create a model to match career advice question with professionals by industry
 
-2. Machine Learning
+2.	Machine Learning
 
-o    Neural Networks
+o Neural Networks
 
-3. Other requirements
+3.	Other requirements
 
-o    Pandas
+o Pandas
+o Flask
+o HTML /CSS/Bootstrap
 
-o    Flask
+-------------------------------------------------------------------------------------------------------------------------------------------
 
-o    HTML /CSS/Bootstrap
+Run app.py to open the app
+ML model predicts with 63% accuracy
 
-kaggle.com
-Data Science for Good: CareerVillage.org
-Match career advice questions with professionals in the field
+-------------------------------------------------------------------------------------------------------------------------------------------
+To re-run ML model please follow the steps below:
+1.	Run Indexer.ipynb
+2.	Run Comment_Score_Jupyter.ipynb
+3.	Run Best_Answer.ipynb
+4.	Run ml_practice.ipynb
 
