@@ -23,7 +23,7 @@ CORS(app)
 
 # load the model, and pass in the custom metric function
 with CustomObjectScope({'GlorotUniform': glorot_uniform()}):
-       model = load_model('first_model_50.h5')
+       model = load_model('third_model.h5')
 
 model.summary()
 
@@ -44,22 +44,26 @@ def my_form_post():
 
 @app.route("/getvalue/<title>/<body>")
 def data(title, body):
-    body = body.replace("%20", " ")
-    title = title.replace("%20", " ")
-    tq = [{'Title':title,'Body':body}]
-    df = pd.DataFrame(tq)
+       body = body.replace("%20", " ")
+       title = title.replace("%20", " ")
+       tq = [{'Title':title,'Body':body}]
+       df = pd.DataFrame(tq)
 
-    df['indexed'] = df.apply(lambda x: encode(x['Title'], x['Body']), axis=1)
-    final = pad_sequences(df['indexed'], value=0, padding='post', maxlen=50)
-    global graph
-    with graph.as_default():
-       model._make_predict_function()
-       f = model.predict_classes(final)
+       df['indexed'] = df.apply(lambda x: encode(x['Title'], x['Body']), axis=1)
+       final = pad_sequences(df['indexed'], value=0, padding='post', maxlen=50)
+   
+       global graph
+       with graph.as_default():
+              model._make_predict_function()
+              f = model.predict_classes(final)
 
        prof = pd.read_csv("Data/professionals_index_new.csv", header=None, names=["Profession", "Code"])
        data = prof.loc[prof["Code"] == f[0], "Profession"]
-    """Display all data from the collection."""
-    return f'{data.values[0]}'      
+       
+       try:
+              return f'{data.values[0]}'
+       except IndexError:
+              return f'No professional match at this moment'
     
 if __name__ == '__main__':
     app.run(debug=True)
